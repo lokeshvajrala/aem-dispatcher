@@ -1,0 +1,19 @@
+/author
+{
+
+    $include "../client_headers.any"
+
+    /virtualhosts
+    {
+        "${AUTHOR_DOMAIN_SERVER_NAME}"
+    }
+
+    $include "renders.any"
+
+    $include "filter.any"
+
+    $include "cache.any"
+
+    $include "../statistics.any"
+
+}

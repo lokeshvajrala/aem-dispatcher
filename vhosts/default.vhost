@@ -1,0 +1,21 @@
+## Default vhost to catch all unmatched hostname requests
+<VirtualHost *:80>
+
+    ServerName default
+    ServerAlias "*"
+    DocumentRoot "${CACHE_DOCUMENT_ROOT}/default"
+    ErrorLog "${LOG_LOCATION_ROOT}/default/local-error_log"
+    CustomLog "${LOG_LOCATION_ROOT}/default/local-access_log" common
+    
+    <Directory ${CACHE_DOCUMENT_ROOT}/default>
+        ### dispatcher module is not enabled for the default vhost.
+        Options FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    #<IfModule mod_rewrite.c>
+    #    RewriteEngine On
+    #    LogLevel warn rewrite:info
+    #</IfModule>
+</VirtualHost>

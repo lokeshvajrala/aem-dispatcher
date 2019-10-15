@@ -1,0 +1,10 @@
+/renders
+    {
+        /rend01
+        {
+            /hostname "${RENDER_NAME}"
+            /port "4502"
+
+            # /timeout "0"
+        }
+    }

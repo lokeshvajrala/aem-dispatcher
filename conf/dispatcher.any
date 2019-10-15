@@ -1,0 +1,9 @@
+# Each farm configures a set of load balanced renders (i.e. remote servers)
+/farms
+{
+    # publish farm
+    $include "publish/dispatcher.any"
+
+    # author farm
+    $include "author/dispatcher.any"
+}

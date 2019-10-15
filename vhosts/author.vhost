@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+
+    ServerName ${AUTHOR_DOMAIN_SERVER_NAME}
+    #ServerAlias alias-name
+    DocumentRoot "${CACHE_DOCUMENT_ROOT}/author"
+    ErrorLog "${LOG_LOCATION_ROOT}/aem-author/local-error_log"
+    CustomLog "${LOG_LOCATION_ROOT}/aem-author/local-access_log" common
+    
+    <Directory ${CACHE_DOCUMENT_ROOT}/author>
+        <IfModule disp_apache2.c>
+            ModMimeUsePathInfo On
+            SetHandler dispatcher-handler
+            DirectorySlash off
+        </IfModule>
+         
+        Options FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        LogLevel warn rewrite:info
+    </IfModule>
+</VirtualHost>
