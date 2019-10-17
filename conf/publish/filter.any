@@ -18,7 +18,6 @@
         /extension '(clientlibs|css|gif|ico|js|png|swf|jpe?g|woff2?)'
     }
 
-
     # Enable features
     /0041 {
         /type "allow"
@@ -28,10 +27,6 @@
         /type "allow"
         /url "/libs/granite/csrf/token.json"
     }  # enable csrf token
-    /0043 {
-        /type "allow"
-        /url "/libs/granite/security/currentuser.json"
-    }  # enable currentuser json call to test the we.retail site
 
     # Deny content grabbing, on all accessible pages, using regular expressions
     /0051 {
@@ -46,13 +41,5 @@
         /selectors '(feed|rss|pages|languages|blueprint|infinity|tidy)'
         /extension '(json|xml|html)'
     }
-
-    # Uncomment the following to allow one-level json requests
-    # /0053 {
-    #   /type "allow"
-    #    /method "GET"
-    #    /extension "json"
-    #    /selectors "1"
-    #}
 
 }

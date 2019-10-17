@@ -18,8 +18,4 @@
         Require all granted
     </Directory>
 
-    #<IfModule mod_rewrite.c>
-    #    RewriteEngine On
-    #    LogLevel warn rewrite:info
-    #</IfModule>
 </VirtualHost>

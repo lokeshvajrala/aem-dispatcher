@@ -18,38 +18,32 @@
         Require all granted
     </Directory>
 
-    ### Rewrite rules
-    ## Following module is currently not loaded to the web server as it is commented out using the IgnoreBlockComment,
-    ## comment the <IfDefine IgnoreBlockComment> and update the paths with real site
-    <IfDefine IgnoreBlockComment>
-        <IfModule mod_rewrite.c>
-            RewriteEngine On
-            LogLevel debug rewrite:trace5
-            #LogLevel warn rewrite:info
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        LogLevel warn rewrite:info
 
-            ### default page
-            RewriteRule ^/$ /content/site/us/en.html [PT,L]
+        ### default page
+        RewriteRule ^/$ /content/site/us/en.html [PT,L]
 
-            ### whitelist the allowed extensions or use regex
-            #RewriteCond %{REQUEST_URI} !\.(html|css|js|less|jpg|png|gif)$
-            RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
-            RewriteRule ^/(.*?)$ $1.html [R=301,L,NE]
+        ### whitelist the allowed extensions or use regex
+        #RewriteCond %{REQUEST_URI} !\.(html|css|js|less|jpg|png|gif)$
+        RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
+        RewriteRule ^/(.*?)$ $1.html [R=301,L,NE]
 
-            ## Shorten the full paths
-            RewriteRule ^/content/site/(.*?)\.html $1.html [R=301,L,NE]
+        ## Shorten the full paths
+        RewriteRule ^/content/site/(.*?)\.html $1.html [R=301,L,NE]
 
-            ### block the directory access
-            RewriteCond %{REQUEST_URI} !^/apps
-            RewriteCond %{REQUEST_URI} !^/bin
-            RewriteCond %{REQUEST_URI} !^/content
-            RewriteCond %{REQUEST_URI} !^/etc
-            RewriteCond %{REQUEST_URI} !^/home
-            RewriteCond %{REQUEST_URI} !^/libs
-            RewriteCond %{REQUEST_URI} !^/tmp
-            RewriteCond %{REQUEST_URI} !^/var
-            RewriteCond %{REQUEST_URI} !^/dispatcher
-            RewriteRule ^/(.*)$ /content/site/$1 [PT,L]
-        </IfModule>
-    </IfDefine>
+        ### block the directory access
+        RewriteCond %{REQUEST_URI} !^/apps
+        RewriteCond %{REQUEST_URI} !^/bin
+        RewriteCond %{REQUEST_URI} !^/content
+        RewriteCond %{REQUEST_URI} !^/etc
+        RewriteCond %{REQUEST_URI} !^/home
+        RewriteCond %{REQUEST_URI} !^/libs
+        RewriteCond %{REQUEST_URI} !^/tmp
+        RewriteCond %{REQUEST_URI} !^/var
+        RewriteCond %{REQUEST_URI} !^/dispatcher
+        RewriteRule ^/(.*)$ /content/site/$1 [PT,L]
+    </IfModule>
 
 </VirtualHost>

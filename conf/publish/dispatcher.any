@@ -23,8 +23,8 @@
 
     #/stickyConnections
     #{
-    #    /paths {
-    #      "/content/we-retail/us/en"
+    #    /paths { }
+    #
     #}
 
 
