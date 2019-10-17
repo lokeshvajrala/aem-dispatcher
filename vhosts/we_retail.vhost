@@ -1,0 +1,4 @@
+### Usage of Macro
+<IfModule mod_macro.c>
+    Use VHost we-retail we-retail /content/we-retail/us/en
+</IfModule>

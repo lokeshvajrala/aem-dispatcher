@@ -1,0 +1,3 @@
+<IfModule mod_macro.c>
+    Use VHost we-retail.es we-retail-es /content/we-retail/es/es
+</IfModule>

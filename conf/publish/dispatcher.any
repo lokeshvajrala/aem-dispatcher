@@ -6,6 +6,9 @@
     /virtualhosts
     {
         "${PUBLISH_DOMAIN_SERVER_NAME}"
+        "we-retail"
+        "we-retail.fr"
+        "we-retail.es"
     }
 
     $include "renders.any"
