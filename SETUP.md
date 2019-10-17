@@ -25,6 +25,12 @@ _Add the host entries in the `/etc/hosts` file_
 >127.0.0.1      aem-author.local
 >
 >127.0.0.1      aem-publish.local
+>
+>127.0.0.1      we-retail
+>
+>127.0.0.1      we-retail.fr
+>
+>127.0.0.1      we-retail.es
 
 
 ### Useful Commands 
