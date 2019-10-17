@@ -22,10 +22,16 @@ _Use the env vars to better manage the config paths._
 
 ### Vhsots
 _Add the host entries in the `/etc/hosts` file_ 
->127.0.0.1      aem-author.local
+> 127.0.0.1      aem-author.local
 >
->127.0.0.1      aem-publish.local
+> 127.0.0.1      aem-publish.local
 
+### AEM Servers for this setup
+> author - localhost:4502
+>
+> publish1 - localhost:4503
+>
+> publish2 - localhost:5503
 
 ### Useful Commands 
 ###### apachectl tool commands
