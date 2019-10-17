@@ -7,7 +7,10 @@
 5. Restart the apache to load the new configs `apachectl restart`
 
 ### ENVIRONMENT VARIABLES
-_Use the env vars to better manage the config paths._
+The Apache HTTP Server provides a mechanism for storing information in named variables and helps to manage the environment domain names, SSL cert file paths, and others.
+
+The entries of these vars are in the apache server and managed **manually** on the servers.
+
 > export RENDER_NAME=localhost
 >
 > export CACHE_DOCUMENT_ROOT=/usr/local/var/cache
