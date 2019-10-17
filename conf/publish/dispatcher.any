@@ -16,4 +16,32 @@
 
     $include "../statistics.any"
 
+    #/sessionmanagement
+    # {
+    # settings for user authentification
+    # }
+
+    #/stickyConnections
+    #{
+    #    /paths {
+    #      "/content/we-retail/us/en"
+    #}
+
+
+    #/health_check
+    #{
+    # Page gets contacted when an instance returns a 500
+    #}
+
+    #/retryDelay "1"
+
+    #/numberOfRetries "5"
+
+    #/unavailablePenalty "1"
+
+    #/failover "1"
+
+    # Include X-Cache-Info response header if X-Dispatcher-Info is in request header
+    #/info "1"
+
 }

@@ -1,13 +1,13 @@
 ### Setup Instructions
 1. Checkout this repository to the local machine
-2. Add the environment vars that are mentioned below in the ENVIRONMENT VARIABLES section. In Mac OS it would be at this path - `/usr/local/opt/apache2/bin/envvars`. If the path doesn't exist create the file.
-3. Include the `dispatcher_module.conf` file in the `httpd.conf` file
+2. Add the environment vars that are mentioned in the ENVIRONMENT VARIABLES section. In Mac OS it would be at this path - `/etc/apache2/bin/envvars`. 
+3. Include the `dispatcher_module.conf` file in the `httpd.conf` file. In Mac OS the `httpd.conf` location would be at `/etc/apache2/httpd.conf`
    `Include <local-repo-path>/conf.d/dispacther_module.conf`
-4. Check the configs using the `apachectl configtest`, it should return `Syntax OK`. If there are any errors or warnings resolve it 
-5. Restart the apache to load the new configs
+4. Test the configs using the `apachectl configtest`, it should return `Syntax OK`. If there are any errors or warnings resolve it 
+5. Restart the apache to load the new configs `apachectl restart`
 
 ### ENVIRONMENT VARIABLES
-_Use the env vars to better manage the configs for different environments._
+_Use the env vars to better manage the config paths._
 > export RENDER_NAME=localhost
 >
 > export CACHE_DOCUMENT_ROOT=/usr/local/var/cache
@@ -19,6 +19,13 @@ _Use the env vars to better manage the configs for different environments._
 > export AUTHOR_DOMAIN_SERVER_NAME=aem-author.local
 >
 > export CONFIG_ROOT_PATH=/Users/<path-to-the-local-repo>/aem-dispatcher
+
+### Vhsots
+_Add the host entries in the `/etc/hosts` file_ 
+>127.0.0.1      aem-author.local
+>
+>127.0.0.1      aem-publish.local
+
 
 ### Useful Commands 
 ###### apachectl tool commands

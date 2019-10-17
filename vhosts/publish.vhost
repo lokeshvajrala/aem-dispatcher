@@ -19,30 +19,22 @@
     </Directory>
 
     ### Rewrite rules for a single domain
-    ## Comment out the next line "IfDefine IgnoreBlockComment" and its end tag to enable the rewrites.
-    <IfDefine IgnoreBlockComment>
+    #<IfDefine IgnoreBlockComment>
         <IfModule mod_rewrite.c>
             RewriteEngine On
             LogLevel debug rewrite:trace5
             #LogLevel warn rewrite:info
 
             ### default page
-            RewriteRule ^/$ /content/site/home.html [PT,L]
-
-            ### Block full paths to avoid Cross-domain injection ###
-            RewriteCond %{REQUEST_URI} ^/content
-            RewriteCond %{REQUEST_URI} !^/content/campaigns
-            RewriteCond %{REQUEST_URI} !^/content/dam
-            RewriteRule !^/content/site/us/en - [R=404,L,NC]
+            RewriteRule ^/$ /content/we-retail/us/en.html [PT,L]
 
             ### whitelist the allowed extensions or use regex
             #RewriteCond %{REQUEST_URI} !\.(html|css|js|less|jpg|png|gif)$
             RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
             RewriteRule ^/(.*?)$ $1.html [R=301,L,NE]
 
-            ### Pass for csrf token without rewriting
-            RewriteCond %{REQUEST_URI} ^/libs/granite/csrf/token.json
-            RewriteRule ^(.*)$ $1 [L]
+            ## Shorten the full paths
+            RewriteRule ^/content/we-retail/(.*?)\.html $1.html [R=301,L,NE]
 
             ### block the directory access
             RewriteCond %{REQUEST_URI} !^/apps
@@ -54,8 +46,8 @@
             RewriteCond %{REQUEST_URI} !^/tmp
             RewriteCond %{REQUEST_URI} !^/var
             RewriteCond %{REQUEST_URI} !^/dispatcher
-            RewriteRule ^/(.*)$ /content/site/us/en/$1 [PT,L]
+            RewriteRule ^/(.*)$ /content/we-retail/$1 [PT,L]
         </IfModule>
-    </IfDefine>
+    #</IfDefine>
 
 </VirtualHost>

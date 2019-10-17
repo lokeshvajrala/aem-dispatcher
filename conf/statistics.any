@@ -1,3 +1,10 @@
+### Used for the load-balancing
+### Dispatcher uses the scores to determine which render to send a request
+### If there is a renderid cookie, uses that render
+### no renderid cookie, compares the render statistics
+### The score for a render's category is based on previous response times, as well as previous failed and successful connections that Dispatcher attempts
+### If you do not use load balancing, you can omit this section.
+
 /statistics
     {
         /categories
