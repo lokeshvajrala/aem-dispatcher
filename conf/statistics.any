@@ -5,17 +5,17 @@
 ### The score for a render's category is based on previous response times, as well as previous failed and successful connections that Dispatcher attempts
 ### If you do not use load balancing, you can omit this section.
 
-/statistics
-    {
-        /categories
-        {
-            /html
-            {
-                /glob "*.html"
-            }
-            /others
-            {
-                /glob "*"
-            }
-        }
-    }
+#/statistics
+#    {
+#        /categories
+#        {
+#            /html
+#            {
+#                /glob "*.html"
+#            }
+#            /others
+#            {
+#                /glob "*"
+#            }
+#        }
+#    }

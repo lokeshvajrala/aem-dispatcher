@@ -26,6 +26,10 @@ _Add the host entries in the `/etc/hosts` file_
 >
 >127.0.0.1      aem-publish.local
 
+### AEM Servers for this setup
+> author - localhost:4502
+>
+> publish1 - localhost:4503
 
 ### Useful Commands 
 ###### apachectl tool commands
@@ -39,4 +43,3 @@ _Add the host entries in the `/etc/hosts` file_
 ###### Provide permissions to the cache or log directories 
 * chown user:group directory
 * chown user:group -R directory //Recursive operation
-
