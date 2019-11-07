@@ -12,8 +12,15 @@
             SetHandler dispatcher-handler
             DirectorySlash off
         </IfModule>
+        SetOutputFilter INCLUDES
          
-        Options FollowSymLinks
+        # Add Includes to enable SSI Includes used by Sling Dynamic Include
+        Options FollowSymLinks Includes
+
+        # Set includes to process .html files
+        AddOutputFilter INCLUDES .html
+
+
         AllowOverride None
         Require all granted
     </Directory>
@@ -31,6 +38,7 @@
             ### whitelist the allowed extensions or use regex
             #RewriteCond %{REQUEST_URI} !\.(html|css|js|less|jpg|png|gif)$
             RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{3,4}
+            RewriteCond %{REQUEST_URI} !^/(.*)/j_security_check
             RewriteRule ^/(.*?)$ $1.html [R=301,L,NE]
 
             ## Shorten the full paths
@@ -40,12 +48,14 @@
             RewriteCond %{REQUEST_URI} !^/apps
             RewriteCond %{REQUEST_URI} !^/bin
             RewriteCond %{REQUEST_URI} !^/content
+            RewriteCond %{REQUEST_URI} !^/conf
             RewriteCond %{REQUEST_URI} !^/etc
             RewriteCond %{REQUEST_URI} !^/home
             RewriteCond %{REQUEST_URI} !^/libs
             RewriteCond %{REQUEST_URI} !^/tmp
             RewriteCond %{REQUEST_URI} !^/var
             RewriteCond %{REQUEST_URI} !^/dispatcher
+            RewriteCond %{REQUEST_URI} !^/system
             RewriteRule ^/(.*)$ /content/we-retail/$1 [PT,L]
         </IfModule>
     #</IfDefine>

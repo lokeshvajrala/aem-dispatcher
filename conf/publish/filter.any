@@ -32,6 +32,25 @@
         /type "allow"
         /url "/libs/granite/security/currentuser.json"
     }  # enable currentuser json call to test the we.retail site
+    /0044 {
+        /type "allow"
+        /url "/libs/granite/core/content/login.html*"
+    }
+
+    /0045 {
+        /type "allow"
+        /url "/home/users*"
+    }
+    /0046 {
+        /type "allow"
+        /url "/conf/we-retail/settings*"
+    }
+    /0047 {
+        /type "allow"
+        /url "/system/sling/logout.html"
+
+    }
+
 
     # Deny content grabbing, on all accessible pages, using regular expressions
     /0051 {

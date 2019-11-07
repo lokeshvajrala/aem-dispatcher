@@ -19,6 +19,8 @@
 
     $include "../statistics.any"
 
+    $include "auth_checker.any"
+
     #/sessionmanagement
     # {
     # settings for user authentification
@@ -26,7 +28,7 @@
 
     #/stickyConnections
     #{
-    #    /paths {
+    #   /paths {
     #      "/content/we-retail/us/en"
     #}
 

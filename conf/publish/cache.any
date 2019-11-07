@@ -42,7 +42,35 @@
           /glob "*"
           /type "allow"
           }
+
+        /0001 {
+          /glob "*cart*"
+          /type "deny"
+          }
+
+        /0002 {
+          /glob "/libs/granite/csrf/token.json"
+          /type "deny"
+          }
+        /0003 {
+          /glob "/libs/granite/security/currentuser.json"
+          /type "deny"
+          }
+        /0004 {
+            /glob "/content/we-retail/us/en/community/profile*"
+            /type "deny"
+          }
+        /0005 {
+            /glob "*.header_include.html*"
+            /type "deny"
+          }
+
+        /0006 {
+            /glob "*.nocache.html*"
+            /type "deny"
+          }
         }
+
         
       # The invalidate section defines the pages that are "invalidated" after
       # any activation. Please note that the activated page itself and all 

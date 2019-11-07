@@ -1,0 +1,39 @@
+# Authorization checker: before a page in the cache is delivered, a HEAD
+# request is sent to the URL specified in 'url' with the query string
+# '?uri=<page>'. If the response status is 200 (OK), the page is returned
+# from the cache. Otherwise, the request is forwarded to the render and
+# its response returned.
+
+
+/auth_checker
+{
+    /url "/bin/permissioncheck.html"
+
+    /filter
+    {
+        /0000
+        {
+            /glob "*"
+            /type "deny"
+        }
+        /0001
+        {
+            /glob "/content/we-retail/us/en/products/equipment*"
+            /type "allow"
+        }
+    }
+
+    /headers
+    {
+        /0000
+        {
+            /glob "*"
+            /type "deny"
+        }
+        /0001
+        {
+            /glob "Set-Cookie:*"
+            /type "allow"
+        }
+    }
+}
